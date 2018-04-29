@@ -1,0 +1,19 @@
+import React, { Component } from 'react';
+<% if (locals.router){ %>import { Link } from 'react-router-dom';<% } %>
+<% if (locals.cssm){ -%>
+import './about.scss';
+<% } else { -%>
+import styles from './about.scss';
+<% } -%>
+
+export default class About extends Component {
+  render() {
+    return (
+      <div>
+        <div <% if (locals.cssm){ %>styleName="about"<% } else { %>className={styles.about}<% } %>>Hello from about!</div>
+        <% if (locals.router) { %><Link to="/">back to index</Link><% } %>
+      </div>
+    );
+  }
+}
+
